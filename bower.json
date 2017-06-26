@@ -1,0 +1,22 @@
+{
+  "name": "agenda21",
+  "description": "Pasaiako Udaleko Agenda21",
+  "main": "gulpfile.js",
+  "authors": [
+    "Iker Ibarguren Berasaluze"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ikerib/agenda21",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}

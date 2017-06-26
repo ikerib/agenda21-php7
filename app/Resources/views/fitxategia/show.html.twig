@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Fitxategium</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fitxategium.id }}</td>
+            </tr>
+            <tr>
+                <th>Izena</th>
+                <td>{{ fitxategium.izena }}</td>
+            </tr>
+            <tr>
+                <th>Emaila</th>
+                <td>{{ fitxategium.emaila }}</td>
+            </tr>
+            <tr>
+                <th>Kokalekua</th>
+                <td>{{ fitxategium.kokalekua }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ fitxategium.slug }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{% if fitxategium.created %}{{ fitxategium.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Filename</th>
+                <td>{{ fitxategium.filename }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}

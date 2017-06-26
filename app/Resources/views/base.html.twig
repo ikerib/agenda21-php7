@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+{% block html_tag %}
+<html {% block html_class %}class="no-js" {% endblock %}lang="{{ app.request.locale }}">
+{% endblock html_tag %}
+
+{% block head %}
+    <head>
+        <meta charset="{{ _charset }}">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block title %}Pasaiako Udala Agenda 21{% endblock title %}</title>
+        <meta name="description" content="{% block description %}{% endblock description %}">
+        {% block favicon %}
+            <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+            <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block head_style %}
+            {# Override this block to add your own files! #}
+            {% if app.debug %}
+                <link href="{{ asset('css/app.min.css') }}" type="text/css" rel="stylesheet">
+            {% else %}
+                <link href="{{ asset('css/app.min.css') }}" type="text/css" rel="stylesheet">
+            {% endif %}
+
+        {% endblock head_style %}
+
+        <style>
+            /* Sticky footer styles
+-------------------------------------------------- */
+            html {
+                position: relative;
+                min-height: 100%;
+            }
+            body {
+                /* Margin bottom by footer height */
+                margin-bottom: 60px;
+            }
+            .footer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                /* Set the fixed height of the footer here */
+                height: 60px;
+                background-color: #f5f5f5;
+            }
+
+
+            /* Custom page CSS
+            -------------------------------------------------- */
+            /* Not required for template or sticky footer method. */
+
+            .container {
+                width: auto;
+                max-width: 680px;
+                padding: 0 15px;
+            }
+            .container .text-muted {
+                margin: 20px 0;
+            }
+        </style>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+{% endblock head %}
+
+{% block body_tag %}
+<body>
+    <div class="container">
+        <div class="page-header">
+{% endblock body_tag %}
+
+{% block body %}
+
+
+
+    {% block footer %}
+        <footer class="footer">
+            <p>Pasaiako Udala 2017</p>
+        </footer>
+    {% endblock footer %}
+
+
+
+    {% block foot_script %}
+        {# Overwrite this block to add your own js here #}
+        {#<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>#}
+        {#<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>#}
+
+        <script src="{{ asset('js/app.min.js') }}"></script>
+
+    {% endblock foot_script %}
+{% endblock body %}
+        </div>
+    </div>
+</body>
+</html>

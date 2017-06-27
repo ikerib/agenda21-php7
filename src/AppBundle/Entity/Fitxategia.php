@@ -47,7 +47,7 @@ class Fitxategia
      *     checkMX = true
      * )
      *
-     * @ORM\Column(name="emaila", type="string", length=255)
+     * @ORM\Column(name="emaila", type="string", length=255, nullable=true)
      */
     private $emaila;
 
@@ -84,6 +84,13 @@ class Fitxategia
      * @ORM\Column(name="filename", type="string", length=255)
      */
     private $filename;
+
+    /**
+     * @ORM\Column(type="integer")
+     *
+     * @var integer
+     */
+    private $imageSize;
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
@@ -316,5 +323,29 @@ class Fitxategia
     public function getCreated()
     {
         return $this->created;
+    }
+
+    /**
+     * Set imageSize
+     *
+     * @param integer $imageSize
+     *
+     * @return Fitxategia
+     */
+    public function setImageSize($imageSize)
+    {
+        $this->imageSize = $imageSize;
+
+        return $this;
+    }
+
+    /**
+     * Get imageSize
+     *
+     * @return integer
+     */
+    public function getImageSize()
+    {
+        return $this->imageSize;
     }
 }

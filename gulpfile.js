@@ -42,7 +42,8 @@ myFonts = [
 
 myCss = [
   config.bowerDir + '/bootstrap/dist/css/bootstrap.min.css',
-  config.bowerDir + '/bootstrap/dist/css/bootstrap-theme.min.css'
+  config.bowerDir + '/bootstrap/dist/css/bootstrap-theme.min.css',
+  config.bowerDir + '/font-awesome/css/font-awesome.min.css'
 ];
 
 myJs = [

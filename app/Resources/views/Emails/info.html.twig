@@ -1,0 +1,12 @@
+<dl>
+    <dt>Izena</dt>
+    <dd>{{ fitxategia.izena }}</dd>
+    {% if fitxategia.emaila |length > 0 %}
+        <dt>Emaila</dt>
+        <dd>{{ fitxategia.emaila }}</dd>
+    {% endif %}
+    <dt>Kokalekua</dt>
+    <dd>{{ fitxategia.kokalekua }}</dd>
+    <dt>Irudia</dt>
+    <dd>{{ app.request.getUriForPath(vich_uploader_asset(fitxategia, 'uploadfile')) }}</dd>
+</dl>

@@ -32,8 +32,35 @@ class FitxategiaController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $fitxategium->setCreated( new \DateTime() );
             $em->persist($fitxategium);
             $em->flush();
+
+
+            /**
+             * Emaila bidali
+             */
+
+            $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
+            $path = $helper->asset($fitxategium, 'uploadfile');
+            $filename = $request->getUriForPath($path);
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Agenda 21 irudi berria')
+                ->setFrom('agenda21@pasaia.org')
+                ->setTo('iibarguren@pasaia.net')
+                ->setBody(
+                    $this->renderView(
+                        'Emails/info.html.twig',
+                        array(
+                            'filename' => $filename,
+                            'fitxategia' => $fitxategium
+                            )
+                    ),
+                    'text/html'
+                )
+            ;
+            $this->get('mailer')->send($message);
+
 
             return $this->redirectToRoute('fitxategia_show', array('id' => $fitxategium->getId()));
         }
@@ -49,17 +76,13 @@ class FitxategiaController extends Controller
      *
      * @Route("/{id}", name="fitxategia_show")
      * @Method("GET")
-     * @param Fitxategia $fitxategium
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showAction(Fitxategia $fitxategium)
+    public function showAction()
     {
-        $deleteForm = $this->createDeleteForm($fitxategium);
-
         return $this->render('fitxategia/show.html.twig', array(
-            'fitxategium' => $fitxategium,
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
 

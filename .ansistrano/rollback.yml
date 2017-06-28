@@ -1,0 +1,8 @@
+---
+- name: Rollback agenda21
+  hosts: all
+  remote_user: root
+  vars:
+    ansistrano_deploy_to: "var/www/agenda21"
+  roles:
+    - carlosbuenosvinos.ansistrano-rollback

@@ -52,7 +52,7 @@
     </div>
 
 
-    <div style="display: none;" id="lblinfo">
+    <div style="display: none;" id="lblinfo" class="text-center">
         <p>Bidaltzen....<i class="fa fa-spinner fa-spin"></i></p>
     </div>
 
@@ -71,6 +71,21 @@
 
     {{ parent() }}
 
+    <script>
+      $( document ).ready(function() {
+
+        $('#btnBidali').on('click', function() {
+
+            $('#lblinfo').show()
+
+        })
+
+        $('input[required]').on('invalid', function(e){
+          $('#lblinfo').hide()
+        });
+
+      })
+    </script>
 
 
 {% endblock %}

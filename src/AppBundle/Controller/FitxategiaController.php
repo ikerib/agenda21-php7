@@ -74,7 +74,7 @@ class FitxategiaController extends Controller
     /**
      * Finds and displays a fitxategium entity.
      *
-     * @Route("/{id}", name="fitxategia_show")
+     * @Route("/ok", name="fitxategia_show")
      * @Method("GET")
      *
      * @return \Symfony\Component\HttpFoundation\Response

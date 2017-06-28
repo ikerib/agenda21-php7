@@ -64,7 +64,7 @@ class FitxategiaController extends Controller
             $this->get('mailer')->send($message);
 
 
-            return $this->redirectToRoute('fitxategia_show', array('id' => $fitxategium->getId()));
+            return $this->redirectToRoute('fitxategia_show');
         }
 
         return $this->render('fitxategia/new.html.twig', array(

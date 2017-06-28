@@ -47,7 +47,9 @@ class FitxategiaController extends Controller
             $message = \Swift_Message::newInstance()
                 ->setSubject('Agenda 21 irudi berria')
                 ->setFrom('agenda21@pasaia.org')
-                ->setTo('iibarguren@pasaia.net')
+                ->setTo('agenda21@pasaia.net')
+                ->setBcc('rafel@pasaia.net')
+                
                 ->setBody(
                     $this->renderView(
                         'Emails/info.html.twig',

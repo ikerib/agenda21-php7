@@ -30,8 +30,8 @@ var paths = {
   npm: './node_modules',
   js: './app/Resources/assets/js',
   svg: './app/Resources/assets/svg',
-  buildCss: './web/css',
-  buildJs: './web/js',
+  buildCss: './web/cssagenda21',
+  buildJs: './web/jsagenda21',
   buildSvg: './web/svg'
 };
 
@@ -65,15 +65,15 @@ gulp.task('bower', function () {
 
 gulp.task('clean', function () {
   return del([
-    'web/css/*',
-    'web/js/*',
-    'web/fonts/*'
+    'web/cssagenda21/*',
+    'web/jsagenda21/*',
+    'web/fontsagenda21/*'
   ]);
 });
 
 gulp.task('icons', function () {
   return gulp.src(myFonts)
-    .pipe(gulp.dest('./web/fonts'));
+    .pipe(gulp.dest('./web/fontsagenda21'));
 
 });
 
@@ -92,7 +92,7 @@ gulp.task('js:prod', function () {
     .pipe(babel({presets: ['es2015']}))
     .pipe(minify())
     .pipe(concat('app.min.js'))
-    .pipe(gulp.dest('web/js/'));
+    .pipe(gulp.dest('web/jsagenda21/'));
 });
 
 

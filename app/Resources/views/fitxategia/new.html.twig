@@ -33,7 +33,7 @@
 
     <div class="row">
         <div class="form-group">
-            <label for="min-date" class="col-sm-4 control-label">{{ 'Kokalekua | Localización' | trans }}</label>
+            <label for="min-date" class="col-sm-4 control-label">{{ 'Argazkiaren Kokalekua | Localización de la foto' | trans }}</label>
             <div class="col-sm-7">
                 {{ form_errors(form.kokalekua, { 'attr': {'class': 'form-control'} }) }}
                 {{ form_widget(form.kokalekua, { 'attr': {'class': 'form-control'} }) }}
@@ -55,6 +55,10 @@
     <div style="display: none;" id="lblinfo" class="text-center">
         <p>Bidaltzen....Enviando...<i class="fa fa-spinner fa-spin"></i></p>
     </div>
+
+    <div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>
 
     <div class="row">
         <div class="form-group pull-right">

@@ -49,7 +49,7 @@ class FitxategiaController extends Controller
                 ->setFrom('agenda21@pasaia.org')
                 ->setTo('agenda21@pasaia.net')
                 ->setBcc('rafel@pasaia.net')
-                
+
                 ->setBody(
                     $this->renderView(
                         'Emails/info.html.twig',

@@ -10,13 +10,10 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>{% block title %}Pasaiako Udala Agenda 21{% endblock title %}</title>
         <meta name="description" content="{% block description %}{% endblock description %}">
-        {% block favicon %}
-            <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-            <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
-        {% endblock %}
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% block head_style %}
-            <link href="{{ asset('css/app.min.css') }}" type="text/css" rel="stylesheet">
+            <link href="{{ asset('cssagenda21/app.min.css') }}" type="text/css" rel="stylesheet">
         {% endblock head_style %}
 
         <style>
@@ -104,7 +101,7 @@
         {#<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>#}
         {#<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>#}
 
-        <script src="{{ asset('js/app.min.js') }}"></script>
+        <script src="{{ asset('jsagenda21/app.min.js') }}"></script>
 
     {% endblock foot_script %}
 {% endblock body %}

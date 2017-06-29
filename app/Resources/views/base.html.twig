@@ -86,24 +86,10 @@
 
 {% block body %}
 
-
-
-    {% block footer %}
-        <footer class="footer">
-            <p>Pasaiako Udala 2017</p>
-        </footer>
-    {% endblock footer %}
-
-
-
     {% block foot_script %}
-        {# Overwrite this block to add your own js here #}
-        {#<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>#}
-        {#<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>#}
-
         <script src="{{ asset('jsagenda21/app.min.js') }}"></script>
-
     {% endblock foot_script %}
+    
 {% endblock body %}
         </div>
     </div>
